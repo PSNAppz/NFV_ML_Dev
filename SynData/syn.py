@@ -12,10 +12,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 PS Narayanan, thepsnarayanan@gmail.com
 """
+import math
+import random
 
-class SyntheticDataGenerator(object):
+def randomFunction(res):
+    err = [.1, 2]
+    log_func = math.log(res)+ random.uniform(err[0], err[1])
+    return log_func
+print(randomFunction(.9))    
 
-    def randomFunctionGenerator(x):
-        
 
 
