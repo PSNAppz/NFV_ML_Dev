@@ -18,7 +18,7 @@ import pandas as pd
 
 
 def randomFunction(res):
-    err = [5300, 603800]
+    err = [1, 2]
     log_func = math.log(res)+ random.uniform(err[0], err[1])
     return log_func
 
@@ -30,7 +30,7 @@ def main():
         randCPU = random.uniform(0.0,1.0)
         data +=[[randCPU, randomFunction(randCPU)]] 
     df = pd.DataFrame(data, columns=['CPU','throughput'])
-    df.to_csv("data/GeneratedData", sep=',')
+    df.to_csv("data/GeneratedData.csv", sep=',')
 
 main()
 

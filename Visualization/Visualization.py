@@ -15,7 +15,8 @@ from sklearn.linear_model import ElasticNet, LassoLars, Ridge, LinearRegression,
 
 # In[106]:
 # Load data from path
-TimeConstraint = pd.read_csv("data/time_constraint.csv")
+TimeConstraint1 = pd.read_csv("data/time_constraint.csv")
+TimeConstraint = pd.read_csv("../SynData/data/GeneratedData.csv")
 D_rt_none = pd.read_pickle("data/170408-2141-rt-none.pkl")
 D_rt_nginx = pd.read_pickle("data/170408-2154-rt-nginxlb.pkl")
 D_rt_socat = pd.read_pickle("data/170408-2206-rt-socat.pkl")
@@ -35,29 +36,14 @@ def main():
     print(TimeConstraint.info())
     print("Describe")
     print(TimeConstraint.describe())
-    TimeConstraint.drop(['repetition_id'],inplace=True, axis=1)
     f, ax = plt.subplots(3, figsize=(12,18))
-    sns.distplot(TimeConstraint.vnf1cpu, color='c', ax=ax[0])
-    sns.distplot(TimeConstraint.vnf2cpu, color='c', ax=ax[1])
-    sns.distplot(TimeConstraint.throughput_kbyte_per_second, color='c', ax=ax[2])
-
-    corr = TimeConstraint.corr()
-    plt.figure(figsize=(15,20))
-    ax = sns.heatmap(
-                 corr,
-                 vmin=-1, vmax=1, center=0,
-                 cmap=sns.diverging_palette(20, 220, n=200),
-                 square=True
-                 )
-    ax.set_xticklabels(
-                   ax.get_xticklabels(),
-                   rotation=45,
-                   horizontalalignment='right'
-                   )
+    TimeConstraint.drop('id', axis=1)
+    #sns.distplot(TimeConstraint.CPU, color='c', ax=ax[1])
+    #sns.distplot(TimeConstraint.throughput, color='c', ax=ax[2])
+    plt.plot(TimeConstraint.CPU, TimeConstraint.throughput)
     plt.show()
-
     le = LabelEncoder()
-    TimeConstraint.topology = le.fit_transform(TimeConstraint.topology)
+    #TimeConstraint.topology = le.fit_transform(TimeConstraint.topology)
     TimeConstraint.info()
 
     x = TimeConstraint.drop('throughput_kbyte_per_second',axis=1)

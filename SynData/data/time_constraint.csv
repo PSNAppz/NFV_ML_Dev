@@ -1,4 +1,4 @@
-id,topology,repetition_id,vnf1cpu,vnf2cpu,vnf3cpu,throughput_kbyte_per_second
+id,topology,repetition_id,vnf1cpu,vnf2cpu,vnf3cpu,throughput
 0,nx-sc-sq,3,0.16,0.64,0.64,134028.4
 1,nx-sc-sq,6,0.16,0.64,1.0,131123.94
 2,nx-sc-sq,0,0.64,0.16,1.0,71830.73
