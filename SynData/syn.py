@@ -14,12 +14,24 @@ PS Narayanan, thepsnarayanan@gmail.com
 """
 import math
 import random
+import pandas as pd
+
 
 def randomFunction(res):
-    err = [.1, 2]
+    err = [5300, 603800]
     log_func = math.log(res)+ random.uniform(err[0], err[1])
     return log_func
-print(randomFunction(.9))    
 
+def main():
+    print(randomFunction(.9))    
+    n = int(input("Enter value for total no of rows to generate:"))
+    data = []
+    for i in range(n):
+        randCPU = random.uniform(0.0,1.0)
+        data +=[[randCPU, randomFunction(randCPU)]] 
+    df = pd.DataFrame(data, columns=['CPU','throughput'])
+    df.to_csv("data/GeneratedData", sep=',')
+
+main()
 
 
