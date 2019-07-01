@@ -18,7 +18,7 @@ import pandas as pd
 
 
 def randomFunction(res):
-    err = [1, 2]
+    err = [1.0, 2.0]
     log_func = math.log(res)+ random.uniform(err[0], err[1])
     return log_func
 
