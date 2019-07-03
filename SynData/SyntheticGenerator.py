@@ -25,7 +25,7 @@ def randomFunction(res):
 
 def main():
     print(randomFunction(.9))    
-    n = int(input("Enter value for total no of rows to generate:"))
+    n = int(input("Total no of rows to generate:"))
     data = []
     for i in range(n):
         randCPU = random.uniform(0.0,1.0)
