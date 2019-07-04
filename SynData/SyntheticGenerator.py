@@ -20,7 +20,7 @@ import pandas as pd
 def randomFunction(res):
     err = [5,10]
     a = 65000
-    log_func = a*math.log(1+res)+ random.uniform(err[0], err[1])
+    log_func = a*math.log(1+res)
     return log_func
 
 def main():
