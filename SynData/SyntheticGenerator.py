@@ -20,7 +20,7 @@ import pandas as pd
 def randomFunction(res):
     err = [5,10]
     a = 650000
-    log_func = a*math.log(1 + res)
+    log_func = a * math.log(1 + res)
     return log_func
 
 def main():
