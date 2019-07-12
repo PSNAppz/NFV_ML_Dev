@@ -24,7 +24,7 @@ def randomFunction(res):
     return log_func
 
 def main():
-    print(randomFunction(1.1))    
+    print(math.log(2))    
     n = int(input("Total no of rows to generate:"))
     data = []
     for i in range(n):
