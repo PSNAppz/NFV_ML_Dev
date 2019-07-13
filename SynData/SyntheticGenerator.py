@@ -18,13 +18,12 @@ import pandas as pd
 
 
 def randomFunction(res):
-    err = [5,10]
-    a = 650000
+    a = 100
     log_func = a * math.log(1 + res)
     return log_func
 
 def main():
-    print(math.log(2))    
+    print(randomFunction(1))    
     n = int(input("Total no of rows to generate:"))
     data = []
     for i in range(n):
