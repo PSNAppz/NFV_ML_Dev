@@ -1,4 +1,4 @@
-id,CPU,MEM,throughput
+,CPU,MEM,throughput
 0,0.1,64.0,517.21
 1,0.1,64.0,521.33
 2,0.1,64.0,510.55

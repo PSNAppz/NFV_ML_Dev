@@ -20,6 +20,7 @@ import pandas as pd
 def randomFunction(res):
     a = 100
     log_func = a * math.log(1 + res)
+    #inverse: 2^(res/a) - 1
     return log_func
 
 def main():
