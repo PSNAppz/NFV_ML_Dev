@@ -1,0 +1,102 @@
+input:
+  algorithm: bjointsp
+  fixed: None
+  network: Abilene.graphml
+  num_edges: 14
+  num_nodes: 11
+  num_sources: 1
+  num_vnfs: 3
+  objective: 0
+  prev_embedding: None
+  seed: 2545
+  service: fw1chain.yaml
+  sources: source8.yaml
+metrics:
+  changed:
+  - name: vnf_user
+    node: pop8
+  - name: vnf_web
+    node: pop7
+  - name: vnf_fw1
+    node: pop8
+  max_cpu_oversub: 0
+  max_dr_oversub: 0
+  max_endToEnd_delay: 58
+  max_mem_oversub: 0
+  num_changed: 3
+  num_instances: 3
+  obj_value: 3002959.5420885254
+  path_delays:
+  - dest: vnf_fw1
+    dest_node: pop8
+    path_delay: 0
+    src: vnf_user
+    src_node: pop8
+  - dest: vnf_web
+    dest_node: pop7
+    path_delay: 3
+    src: vnf_fw1
+    src_node: pop8
+  runtime: 0.3425328731536865
+  total_delay: 58
+  total_path_delay: 3
+  total_vnf_delay: 55
+  vnf_delays:
+  - vnf: vnf_user
+    vnf_delay: 0
+  - vnf: vnf_web
+    vnf_delay: 20
+  - vnf: vnf_fw1
+    vnf_delay: 35
+placement:
+  alloc_node_res:
+  - cpu: 0
+    mem: 0
+    name: vnf_user
+    node: pop8
+  - cpu: 0.9507710442627216
+    mem: 0
+    name: vnf_web
+    node: pop7
+  - cpu: 0.9507710442627216
+    mem: 0
+    name: vnf_fw1
+    node: pop8
+  cpu_oversub: []
+  dr_oversub: []
+  flows:
+  - arc: vnf_user.0->vnf_fw1.0
+    dst_node: pop8
+    flow_id: f1
+    src_node: pop8
+  - arc: vnf_fw1.0->vnf_web.0
+    dst_node: pop7
+    flow_id: f1
+    src_node: pop8
+  links:
+  - arc: vnf_fw1.0->vnf_web.0
+    edge_dst: pop7
+    edge_src: pop8
+    link_dst: pop7
+    link_src: pop8
+  mem_oversub: []
+  vlinks:
+  - dest_node: pop8
+    dest_vnf: vnf_fw1
+    src_node: pop8
+    src_vnf: vnf_user
+  - dest_node: pop7
+    dest_vnf: vnf_web
+    src_node: pop8
+    src_vnf: vnf_fw1
+  vnfs:
+  - image: '{"image":"placement-user-img", "network":"(id=output,ip=10.0.0.1/24)"}'
+    name: vnf_user
+    node: pop8
+  - image: '{"image":"placement-apache-img", "network":"(id=input,ip=99.0.0.2/24)"}'
+    name: vnf_web
+    node: pop7
+  - image: '{"image":"placement-fw1-img", "network":"(id=input,ip=88.0.0.2/24),(id=output,ip=99.0.0.1/24)"}'
+    name: vnf_fw1
+    node: pop8
+time: 2019-08-03_11-26-11
