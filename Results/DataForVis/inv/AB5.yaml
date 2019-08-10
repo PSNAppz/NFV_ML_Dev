@@ -8,14 +8,14 @@ input:
   num_vnfs: 3
   objective: 0
   prev_embedding: None
-  seed: 7236
+  seed: 1566
   service: fw1chain.yaml
   sources: source0.yaml
 metrics:
   changed:
-  - name: vnf_fw1
-    node: pop0
   - name: vnf_web
+    node: pop0
+  - name: vnf_fw1
     node: pop0
   - name: vnf_user
     node: pop0
@@ -25,7 +25,7 @@ metrics:
   max_mem_oversub: 0
   num_changed: 3
   num_instances: 3
-  obj_value: 3000065.035276413
+  obj_value: 3000883.427124746
   path_delays:
   - dest: vnf_web
     dest_node: pop0
@@ -37,26 +37,26 @@ metrics:
     path_delay: 0
     src: vnf_user
     src_node: pop0
-  runtime: 0.31213808059692383
+  runtime: 0.05984091758728027
   total_delay: 55
   total_path_delay: 0
   total_vnf_delay: 55
   vnf_delays:
-  - vnf: vnf_fw1
-    vnf_delay: 35
   - vnf: vnf_web
     vnf_delay: 20
+  - vnf: vnf_fw1
+    vnf_delay: 35
   - vnf: vnf_user
     vnf_delay: 0
 placement:
   alloc_node_res:
-  - cpu: 0.005017638206481934
-    mem: 0
-    name: vnf_fw1
-    node: pop0
-  - cpu: 0.005017638206481934
+  - cpu: 0.41421356237309515
     mem: 0
     name: vnf_web
+    node: pop0
+  - cpu: 0.41421356237309515
+    mem: 0
+    name: vnf_fw1
     node: pop0
   - cpu: 0
     mem: 0
@@ -85,13 +85,13 @@ placement:
     src_node: pop0
     src_vnf: vnf_user
   vnfs:
-  - image: '{"image":"placement-fw1-img", "network":"(id=input,ip=88.0.0.2/24),(id=output,ip=99.0.0.1/24)"}'
-    name: vnf_fw1
-    node: pop0
   - image: '{"image":"placement-apache-img", "network":"(id=input,ip=99.0.0.2/24)"}'
     name: vnf_web
+    node: pop0
+  - image: '{"image":"placement-fw1-img", "network":"(id=input,ip=88.0.0.2/24),(id=output,ip=99.0.0.1/24)"}'
+    name: vnf_fw1
     node: pop0
   - image: '{"image":"placement-user-img", "network":"(id=output,ip=10.0.0.1/24)"}'
     name: vnf_user
     node: pop0
-time: 2019-08-07_23-02-47
+time: 2019-08-08_14-08-50

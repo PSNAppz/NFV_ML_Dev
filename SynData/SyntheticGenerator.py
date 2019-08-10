@@ -19,12 +19,12 @@ import pandas as pd
 
 def randomFunction(res):
     a = 100
-    log_func = a * math.log(1 + res)
+    log_func = a * math.log2(1 + res)
     #inverse: 2^(res/a) - 1
     return log_func
 
 def main():
-    print(randomFunction(1))    
+    print(randomFunction(10))    
     n = int(input("Total no of rows to generate:"))
     data = []
     for i in range(n):

@@ -8,7 +8,7 @@ input:
   num_vnfs: 3
   objective: 0
   prev_embedding: None
-  seed: 6416
+  seed: 1317
   service: fw1chain.yaml
   sources: source0.yaml
 metrics:
@@ -18,18 +18,18 @@ metrics:
   - name: vnf_user
     node: pop0
   - name: vnf_web
-    node: pop0
+    node: pop2
   max_cpu_oversub: 0
-  max_dr_oversub: 0
-  max_endToEnd_delay: 55
+  max_dr_oversub: 50.0
+  max_endToEnd_delay: 56
   max_mem_oversub: 0
   num_changed: 3
   num_instances: 3
-  obj_value: 3000075.128965378
+  obj_value: 5003102056.0
   path_delays:
   - dest: vnf_web
-    dest_node: pop0
-    path_delay: 0
+    dest_node: pop2
+    path_delay: 1
     src: vnf_fw1
     src_node: pop0
   - dest: vnf_fw1
@@ -37,9 +37,9 @@ metrics:
     path_delay: 0
     src: vnf_user
     src_node: pop0
-  runtime: 0.28153395652770996
-  total_delay: 55
-  total_path_delay: 0
+  runtime: 0.054908037185668945
+  total_delay: 56
+  total_path_delay: 1
   total_vnf_delay: 55
   vnf_delays:
   - vnf: vnf_fw1
@@ -50,7 +50,7 @@ metrics:
     vnf_delay: 20
 placement:
   alloc_node_res:
-  - cpu: 0.010064482688903809
+  - cpu: 1.0
     mem: 0
     name: vnf_fw1
     node: pop0
@@ -58,25 +58,33 @@ placement:
     mem: 0
     name: vnf_user
     node: pop0
-  - cpu: 0.010064482688903809
+  - cpu: 1.0
     mem: 0
     name: vnf_web
-    node: pop0
+    node: pop2
   cpu_oversub: []
-  dr_oversub: []
+  dr_oversub:
+  - link:
+    - pop0
+    - pop2
   flows:
   - arc: vnf_fw1.0->vnf_web.0
-    dst_node: pop0
+    dst_node: pop2
     flow_id: f1
     src_node: pop0
   - arc: vnf_user.0->vnf_fw1.0
     dst_node: pop0
     flow_id: f1
     src_node: pop0
-  links: []
+  links:
+  - arc: vnf_fw1.0->vnf_web.0
+    edge_dst: pop2
+    edge_src: pop0
+    link_dst: pop2
+    link_src: pop0
   mem_oversub: []
   vlinks:
-  - dest_node: pop0
+  - dest_node: pop2
     dest_vnf: vnf_web
     src_node: pop0
     src_vnf: vnf_fw1
@@ -93,5 +101,5 @@ placement:
     node: pop0
   - image: '{"image":"placement-apache-img", "network":"(id=input,ip=99.0.0.2/24)"}'
     name: vnf_web
-    node: pop0
-time: 2019-08-07_23-03-07
+    node: pop2
+time: 2019-08-08_14-09-11

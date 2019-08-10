@@ -8,15 +8,15 @@ input:
   num_vnfs: 3
   objective: 0
   prev_embedding: None
-  seed: 1165
+  seed: 2390
   service: fw1chain.yaml
   sources: source0.yaml
 metrics:
   changed:
-  - name: vnf_fw1
-    node: pop0
   - name: vnf_web
     node: pop2
+  - name: vnf_fw1
+    node: pop0
   - name: vnf_user
     node: pop0
   max_cpu_oversub: 0
@@ -25,7 +25,7 @@ metrics:
   max_mem_oversub: 0
   num_changed: 3
   num_instances: 3
-  obj_value: 4003092049.8766956
+  obj_value: 4003091795.430189
   path_delays:
   - dest: vnf_web
     dest_node: pop2
@@ -37,34 +37,34 @@ metrics:
     path_delay: 0
     src: vnf_user
     src_node: pop0
-  runtime: 0.744171142578125
+  runtime: 0.7056901454925537
   total_delay: 56
   total_path_delay: 1
   total_vnf_delay: 55
   vnf_delays:
-  - vnf: vnf_fw1
-    vnf_delay: 35
   - vnf: vnf_web
     vnf_delay: 20
+  - vnf: vnf_fw1
+    vnf_delay: 35
   - vnf: vnf_user
     vnf_delay: 0
 placement:
   alloc_node_res:
-  - cpu: 0.9969383478164673
-    mem: 0
-    name: vnf_fw1
-    node: pop0
-  - cpu: 0.9969383478164673
+  - cpu: 0.8697150945663452
     mem: 0
     name: vnf_web
     node: pop2
+  - cpu: 0.8697150945663452
+    mem: 0
+    name: vnf_fw1
+    node: pop0
   - cpu: 0
     mem: 0
     name: vnf_user
     node: pop0
   cpu_oversub: []
   dr_oversub:
-  - link: !!python/tuple
+  - link:
     - pop0
     - pop2
   flows:
@@ -93,13 +93,13 @@ placement:
     src_node: pop0
     src_vnf: vnf_user
   vnfs:
-  - image: '{"image":"placement-fw1-img", "network":"(id=input,ip=88.0.0.2/24),(id=output,ip=99.0.0.1/24)"}'
-    name: vnf_fw1
-    node: pop0
   - image: '{"image":"placement-apache-img", "network":"(id=input,ip=99.0.0.2/24)"}'
     name: vnf_web
     node: pop2
+  - image: '{"image":"placement-fw1-img", "network":"(id=input,ip=88.0.0.2/24),(id=output,ip=99.0.0.1/24)"}'
+    name: vnf_fw1
+    node: pop0
   - image: '{"image":"placement-user-img", "network":"(id=output,ip=10.0.0.1/24)"}'
     name: vnf_user
     node: pop0
-time: 2019-08-07_22-56-32
+time: 2019-08-08_14-11-20
