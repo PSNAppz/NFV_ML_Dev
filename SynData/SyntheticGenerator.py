@@ -19,19 +19,20 @@ import pandas as pd
 
 def randomFunction(res):
     a = 100
-    log_func = a * math.log2(1 + res)
+    log_func = a * math.log2(1 + res) + random.uniform(0.0,10.0)
     #inverse: 2^(res/a) - 1
     return log_func
 
 def main():
-    print(randomFunction(10))    
-    n = int(input("Total no of rows to generate:"))
-    data = []
-    for i in range(n):
-        randCPU = random.uniform(0.0,1.0)
-        data +=[[randCPU, randomFunction(randCPU)]] 
-    df = pd.DataFrame(data, columns=['CPU','throughput'])
-    df.to_csv("data/GeneratedData.csv", sep=',')
+    print(randomFunction(1))  
+    print(2**(240/100)-1)
+    #n = int(input("Total no of rows to generate:"))
+    #data = []
+    #for i in range(n):
+        #randCPU = random.uniform(0.0,10.0)
+        #data +=[[randCPU, randomFunction(randCPU)]] 
+    #df = pd.DataFrame(data, columns=['CPU','throughput'])
+    #df.to_csv("data/GeneratedData.csv", sep=',')
 
 main()
 
