@@ -26,13 +26,13 @@ def randomFunction(res):
 def main():
     print(randomFunction(1))  
     print(2**(240/100)-1)
-    #n = int(input("Total no of rows to generate:"))
-    #data = []
-    #for i in range(n):
-        #randCPU = random.uniform(0.0,10.0)
-        #data +=[[randCPU, randomFunction(randCPU)]] 
-    #df = pd.DataFrame(data, columns=['CPU','throughput'])
-    #df.to_csv("data/GeneratedData.csv", sep=',')
+    n = int(input("Total no of rows to generate:"))
+    data = []
+    for i in range(n):
+        randCPU = random.uniform(0.0,10.0)
+        data +=[[randCPU, randomFunction(randCPU)]] 
+    df = pd.DataFrame(data, columns=['CPU','throughput'])
+    df.to_csv("data/GeneratedData.csv", sep=',')
 
 main()
 
