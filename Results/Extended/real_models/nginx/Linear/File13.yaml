@@ -1,0 +1,181 @@
+input:
+  algorithm: bjointsp
+  fixed: None
+  network: Abilene.graphml
+  num_edges: 14
+  num_nodes: 11
+  num_sources: 1
+  num_vnfs: 5
+  objective: 0
+  prev_embedding: None
+  seed: 6532
+  service: fw3chain.yaml
+  sources: source9.yaml
+metrics:
+  changed:
+  - name: vnf_fw2
+    node: pop2
+  - name: vnf_user
+    node: pop9
+  - name: vnf_fw1
+    node: pop0
+  - name: vnf_fw3
+    node: pop9
+  - name: vnf_web
+    node: pop1
+  max_cpu_oversub: 135.64327587374888
+  max_dr_oversub: 349950.0
+  max_endToEnd_delay: 6
+  max_mem_oversub: 0
+  num_changed: 5
+  num_instances: 5
+  obj_value: 35009619874166.477
+  path_delays:
+  - dest: vnf_fw1
+    dest_node: pop0
+    path_delay: 1
+    src: vnf_fw2
+    src_node: pop2
+  - dest: vnf_fw3
+    dest_node: pop9
+    path_delay: 0
+    src: vnf_user
+    src_node: pop9
+  - dest: vnf_web
+    dest_node: pop1
+    path_delay: 3
+    src: vnf_fw1
+    src_node: pop0
+  - dest: vnf_fw2
+    dest_node: pop2
+    path_delay: 2
+    src: vnf_fw3
+    src_node: pop9
+  runtime: 0.6513738632202148
+  total_delay: 6
+  total_path_delay: 6
+  total_vnf_delay: 0
+  vnf_delays:
+  - vnf: vnf_user
+    vnf_delay: 0
+  - vnf: vnf_fw2
+    vnf_delay: 0
+  - vnf: vnf_fw1
+    vnf_delay: 0
+  - vnf: vnf_fw3
+    vnf_delay: 0
+  - vnf: vnf_web
+    vnf_delay: 0
+placement:
+  alloc_node_res:
+  - cpu: 0
+    mem: 0
+    name: vnf_user
+    node: pop9
+  - cpu: 136.64327587374888
+    mem: 0
+    name: vnf_fw2
+    node: pop2
+  - cpu: 136.64327587374888
+    mem: 0
+    name: vnf_fw1
+    node: pop0
+  - cpu: 136.64327587374888
+    mem: 0
+    name: vnf_fw3
+    node: pop9
+  - cpu: 136.64327587374888
+    mem: 0
+    name: vnf_web
+    node: pop1
+  cpu_oversub:
+  - node: pop0
+  - node: pop1
+  - node: pop2
+  - node: pop9
+  dr_oversub:
+  - link:
+    - pop0
+    - pop1
+  - link:
+    - pop2
+    - pop0
+  - link:
+    - pop9
+    - pop2
+  flows:
+  - arc: vnf_fw2.0->vnf_fw1.0
+    dest_vnf: vnf_fw1
+    dst_node: pop0
+    flow_id: f1
+    src_node: pop2
+    src_vnf: vnf_fw2
+  - arc: vnf_user.0->vnf_fw3.0
+    dest_vnf: vnf_fw3
+    dst_node: pop9
+    flow_id: f1
+    src_node: pop9
+    src_vnf: vnf_user
+  - arc: vnf_fw1.0->vnf_web.0
+    dest_vnf: vnf_web
+    dst_node: pop1
+    flow_id: f1
+    src_node: pop0
+    src_vnf: vnf_fw1
+  - arc: vnf_fw3.0->vnf_fw2.0
+    dest_vnf: vnf_fw2
+    dst_node: pop2
+    flow_id: f1
+    src_node: pop9
+    src_vnf: vnf_fw3
+  links:
+  - arc: vnf_fw2.0->vnf_fw1.0
+    edge_dst: pop0
+    edge_src: pop2
+    link_dst: pop0
+    link_src: pop2
+  - arc: vnf_fw1.0->vnf_web.0
+    edge_dst: pop1
+    edge_src: pop0
+    link_dst: pop1
+    link_src: pop0
+  - arc: vnf_fw3.0->vnf_fw2.0
+    edge_dst: pop2
+    edge_src: pop9
+    link_dst: pop2
+    link_src: pop9
+  mem_oversub: []
+  vlinks:
+  - dest_node: pop0
+    dest_vnf: vnf_fw1
+    src_node: pop2
+    src_vnf: vnf_fw2
+  - dest_node: pop9
+    dest_vnf: vnf_fw3
+    src_node: pop9
+    src_vnf: vnf_user
+  - dest_node: pop1
+    dest_vnf: vnf_web
+    src_node: pop0
+    src_vnf: vnf_fw1
+  - dest_node: pop2
+    dest_vnf: vnf_fw2
+    src_node: pop9
+    src_vnf: vnf_fw3
+  vnfs:
+  - image: '{"image":"placement-user-img", "network":"(id=output,ip=66.0.0.1/24)"}'
+    name: vnf_user
+    node: pop9
+  - image: '{"image":"placement-fw2-img", "network":"(id=input,ip=77.0.0.2/24),(id=output,ip=88.0.0.1/24)"}'
+    name: vnf_fw2
+    node: pop2
+  - image: '{"image":"placement-fw1-img", "network":"(id=input,ip=88.0.0.2/24),(id=output,ip=99.0.0.1/24)"}'
+    name: vnf_fw1
+    node: pop0
+  - image: '{"image":"placement-fw3-img", "network":"(id=input,ip=66.0.0.2/24),(id=output,ip=77.0.0.1/24)"}'
+    name: vnf_fw3
+    node: pop9
+  - image: '{"image":"placement-apache-img", "network":"(id=input,ip=99.0.0.2/24)"}'
+    name: vnf_web
+    node: pop1
+time: 2019-08-20_12-12-49
